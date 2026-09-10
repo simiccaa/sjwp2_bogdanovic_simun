@@ -1,0 +1,554 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Project Name</title>
+
+    <meta
+      name="description"
+      content="A short description of your GitHub project."
+    />
+    <meta name="author" content="Your Name" />
+
+    <style>
+      :root {
+        --bg: #0d1117;
+        --bg-secondary: #161b22;
+        --card: #21262d;
+        --border: #30363d;
+        --text: #f0f6fc;
+        --muted: #8b949e;
+        --primary: #58a6ff;
+        --primary-hover: #79c0ff;
+        --success: #3fb950;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+          Arial, sans-serif;
+
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.6;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .container {
+        width: min(1100px, 90%);
+        margin: auto;
+      }
+
+      /* Navigation */
+
+      nav {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+
+        background: rgba(13, 17, 23, 0.85);
+        backdrop-filter: blur(10px);
+
+        border-bottom: 1px solid var(--border);
+      }
+
+      .nav-container {
+        height: 64px;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .logo {
+        font-size: 1.2rem;
+        font-weight: 700;
+      }
+
+      .logo span {
+        color: var(--primary);
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 24px;
+        list-style: none;
+      }
+
+      .nav-links a {
+        color: var(--muted);
+        transition: 0.2s;
+      }
+
+      .nav-links a:hover {
+        color: var(--text);
+      }
+
+      /* Hero */
+
+      .hero {
+        min-height: 80vh;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        text-align: center;
+
+        padding: 80px 0;
+
+        background: radial-gradient(
+          circle at 50% 20%,
+          rgba(88, 166, 255, 0.15),
+          transparent 40%
+        );
+      }
+
+      .hero-content {
+        max-width: 850px;
+      }
+
+      .badge {
+        display: inline-block;
+
+        padding: 6px 14px;
+        margin-bottom: 20px;
+
+        border: 1px solid var(--border);
+        border-radius: 50px;
+
+        color: var(--primary);
+        background: rgba(88, 166, 255, 0.08);
+
+        font-size: 0.9rem;
+      }
+
+      .hero h1 {
+        font-size: clamp(2.5rem, 7vw, 5rem);
+        line-height: 1.1;
+
+        margin-bottom: 20px;
+      }
+
+      .hero h1 span {
+        color: var(--primary);
+      }
+
+      .hero p {
+        max-width: 700px;
+        margin: 0 auto 30px;
+
+        color: var(--muted);
+        font-size: 1.15rem;
+      }
+
+      .buttons {
+        display: flex;
+        justify-content: center;
+        gap: 14px;
+        flex-wrap: wrap;
+      }
+
+      .button {
+        display: inline-block;
+
+        padding: 12px 22px;
+
+        border-radius: 7px;
+
+        font-weight: 600;
+
+        transition: 0.2s;
+      }
+
+      .button-primary {
+        background: var(--primary);
+        color: #000;
+      }
+
+      .button-primary:hover {
+        background: var(--primary-hover);
+        transform: translateY(-2px);
+      }
+
+      .button-secondary {
+        border: 1px solid var(--border);
+        background: var(--bg-secondary);
+      }
+
+      .button-secondary:hover {
+        border-color: var(--primary);
+        transform: translateY(-2px);
+      }
+
+      /* Sections */
+
+      section {
+        padding: 90px 0;
+      }
+
+      .section-title {
+        text-align: center;
+        margin-bottom: 50px;
+      }
+
+      .section-title h2 {
+        font-size: 2rem;
+        margin-bottom: 10px;
+      }
+
+      .section-title p {
+        color: var(--muted);
+      }
+
+      /* Features */
+
+      .features {
+        display: grid;
+
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+
+        gap: 20px;
+      }
+
+      .card {
+        background: var(--bg-secondary);
+
+        border: 1px solid var(--border);
+        border-radius: 10px;
+
+        padding: 28px;
+
+        transition: 0.2s;
+      }
+
+      .card:hover {
+        border-color: var(--primary);
+        transform: translateY(-4px);
+      }
+
+      .icon {
+        font-size: 2rem;
+        margin-bottom: 15px;
+      }
+
+      .card h3 {
+        margin-bottom: 10px;
+      }
+
+      .card p {
+        color: var(--muted);
+      }
+
+      /* Code */
+
+      .code-section {
+        background: var(--bg-secondary);
+      }
+
+      .code {
+        max-width: 800px;
+        margin: auto;
+
+        background: #010409;
+
+        border: 1px solid var(--border);
+        border-radius: 10px;
+
+        overflow: hidden;
+      }
+
+      .code-header {
+        padding: 10px 15px;
+
+        border-bottom: 1px solid var(--border);
+
+        color: var(--muted);
+        font-size: 0.85rem;
+      }
+
+      pre {
+        padding: 25px;
+
+        overflow-x: auto;
+
+        color: #c9d1d9;
+
+        font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+      }
+
+      .command {
+        color: var(--success);
+      }
+
+      /* Tech */
+
+      .tech-stack {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      .tech {
+        padding: 8px 16px;
+
+        background: var(--bg-secondary);
+
+        border: 1px solid var(--border);
+        border-radius: 50px;
+
+        color: var(--muted);
+      }
+
+      /* GitHub */
+
+      .github-box {
+        max-width: 750px;
+        margin: auto;
+
+        text-align: center;
+
+        padding: 50px 30px;
+
+        background: linear-gradient(
+          135deg,
+          rgba(88, 166, 255, 0.1),
+          rgba(63, 185, 80, 0.05)
+        );
+
+        border: 1px solid var(--border);
+        border-radius: 12px;
+      }
+
+      .github-box h2 {
+        margin-bottom: 15px;
+      }
+
+      .github-box p {
+        color: var(--muted);
+        margin-bottom: 25px;
+      }
+
+      /* Footer */
+
+      footer {
+        padding: 30px 0;
+
+        border-top: 1px solid var(--border);
+
+        text-align: center;
+
+        color: var(--muted);
+
+        font-size: 0.9rem;
+      }
+
+      /* Mobile */
+
+      @media (max-width: 600px) {
+        .nav-links {
+          display: none;
+        }
+
+        .hero {
+          min-height: 70vh;
+        }
+
+        section {
+          padding: 65px 0;
+        }
+
+        .hero h1 {
+          font-size: 2.7rem;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Navigation -->
+
+    <nav>
+      <div class="container nav-container">
+        <a href="#" class="logo"> <span>◆</span> ProjectName </a>
+
+        <ul class="nav-links">
+          <li><a href="#features">Features</a></li>
+          <li><a href="#installation">Installation</a></li>
+          <li><a href="#tech">Tech Stack</a></li>
+          <li><a href="#github">GitHub</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Hero -->
+
+    <header class="hero">
+      <div class="hero-content">
+        <div class="badge">Open Source • GitHub Project</div>
+
+        <h1>Build something <span>awesome.</span></h1>
+
+        <p>
+          A modern, simple and powerful project designed to help developers
+          build better applications faster.
+        </p>
+
+        <div class="buttons">
+          <!-- CHANGE THIS LINK -->
+          <a
+            href="https://github.com/YOUR_USERNAME/YOUR_REPOSITORY"
+            class="button button-primary"
+            target="_blank"
+          >
+            View on GitHub
+          </a>
+
+          <a href="#installation" class="button button-secondary">
+            Get Started
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Features -->
+
+    <section id="features">
+      <div class="container">
+        <div class="section-title">
+          <h2>Features</h2>
+
+          <p>Everything you need to get started.</p>
+        </div>
+
+        <div class="features">
+          <div class="card">
+            <div class="icon">⚡</div>
+
+            <h3>Fast</h3>
+
+            <p>Designed with performance and simplicity in mind.</p>
+          </div>
+
+          <div class="card">
+            <div class="icon">🔧</div>
+
+            <h3>Easy to Use</h3>
+
+            <p>Simple setup and an intuitive developer experience.</p>
+          </div>
+
+          <div class="card">
+            <div class="icon">🔒</div>
+
+            <h3>Reliable</h3>
+
+            <p>Built with clean and maintainable code for long-term use.</p>
+          </div>
+
+          <div class="card">
+            <div class="icon">🌎</div>
+
+            <h3>Open Source</h3>
+
+            <p>Free to use, modify and contribute to.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Installation -->
+
+    <section id="installation" class="code-section">
+      <div class="container">
+        <div class="section-title">
+          <h2>Installation</h2>
+
+          <p>Clone the repository and start developing.</p>
+        </div>
+
+        <div class="code">
+          <div class="code-header">Terminal</div>
+
+          <pre><span class="command">git clone</span> https://github.com/YOUR_USERNAME/YOUR_REPOSITORY.git
+
+<span class="command">cd</span> YOUR_REPOSITORY
+
+<span class="command">npm install</span>
+
+<span class="command">npm run dev</span></pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tech Stack -->
+
+    <section id="tech">
+      <div class="container">
+        <div class="section-title">
+          <h2>Tech Stack</h2>
+
+          <p>Technologies used in this project.</p>
+        </div>
+
+        <div class="tech-stack">
+          <span class="tech">HTML</span>
+          <span class="tech">CSS</span>
+          <span class="tech">JavaScript</span>
+          <span class="tech">Node.js</span>
+          <span class="tech">Git</span>
+          <span class="tech">GitHub</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- GitHub -->
+
+    <section id="github">
+      <div class="container">
+        <div class="github-box">
+          <h2>Want to contribute?</h2>
+
+          <p>
+            Check out the repository, open an issue, submit a pull request, or
+            simply give the project a ⭐ on GitHub.
+          </p>
+
+          <!-- CHANGE THIS LINK -->
+          <a
+            href="https://github.com/YOUR_USERNAME/YOUR_REPOSITORY"
+            class="button button-primary"
+            target="_blank"
+          >
+            ⭐ View Repository
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+
+    <footer>
+      <div class="container">
+        <p>© 2026 Your Name. Built with ❤️ and open source.</p>
+      </div>
+    </footer>
+  </body>
+</html>
