@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kuća</title>
+  </head>
+  <canvas
+    id="myCanvas"
+    width="600"
+    height="600"
+    style="border: 1px solid black"
+  ></canvas>
+  <script>
+    let c = document.getElementById("myCanvas");
+    let ctx = c.getContext("2d");
+
+    ctx.beginPath();
+    ctx.rect(80, 200, 350, 200);
+    ctx.fillStyle = "blue";
+    ctx.fill();
+
+    ctx.beginPath();
+    ctx.rect(105, 308, 65, 90);
+    ctx.stroke();
+    ctx.fillStyle = "white";
+    ctx.fill();
+
+    ctx.beginPath();
+    ctx.rect(265, 258, 105, 90);
+    ctx.fillStyle = "white";
+    ctx.fill();
+
+    ctx.beginPath();
+    ctx.moveTo(80, 200);
+    ctx.lineTo(250, 80);
+    ctx.lineTo(430, 200);
+    ctx.fillStyle = "Red";
+    ctx.fill();
+  </script>
+
+  <body></body>
+</html>
