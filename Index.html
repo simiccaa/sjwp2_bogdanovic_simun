@@ -1,23 +1,100 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Project</title>
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<body>
+    <title>My GitHub Pages</title>
 
-    <h1>My Project</h1>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        color: #222;
+        margin: 0;
+        padding: 40px 20px;
+      }
 
-    <p>Welcome to my project!</p>
+      .container {
+        max-width: 800px;
+        margin: auto;
+        background: white;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      }
 
-    <h2>Pages</h2>
+      h1 {
+        text-align: center;
+        margin-bottom: 10px;
+      }
 
-    <ul>
-        <li><a href="page1.html">Page 1</a></li>
-        <l
-    </ul>
+      .description {
+        text-align: center;
+        color: #666;
+        margin-bottom: 30px;
+      }
 
-</body>
+      .page-list {
+        list-style: none;
+        padding: 0;
+      }
+
+      .page-list li {
+        margin: 12px 0;
+      }
+
+      .page-list a {
+        display: block;
+        padding: 15px 20px;
+        background-color: #24292e;
+        color: white;
+        text-decoration: none;
+        border-radius: 8px;
+        transition:
+          background-color 0.2s,
+          transform 0.2s;
+      }
+
+      .page-list a:hover {
+        background-color: #0366d6;
+        transform: translateX(5px);
+      }
+
+      footer {
+        text-align: center;
+        margin-top: 30px;
+        color: #888;
+        font-size: 14px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>My Pages</h1>
+
+      <p class="description">Welcome! Choose a page from the list below.</p>
+
+      <ul class="page-list">
+        <li>
+          <a href="page1.html">Page 1</a>
+        </li>
+
+        <li>
+          <a href="page2.html">Page 2</a>
+        </li>
+
+        <li>
+          <a href="about.html">About</a>
+        </li>
+
+        <li>
+          <a href="contact.html">Contact</a>
+        </li>
+      </ul>
+
+      <footer>© 2026 My Repository</footer>
+    </div>
+  </body>
 </html>
