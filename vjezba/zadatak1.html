@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zadatak 1</title>
+</head>
+<body>
+    <canvas
+      id="myCanvas"
+      width="600"
+      height="600"
+      style="border: 1px solid black"
+    ></canvas>
+
+    <script>
+      let c = document.getElementById("myCanvas");
+      let ctx = c.getContext("2d");
+
+      ctx.beginPath();
+      ctx.rect(0,0,600,600);
+      ctx.fillStyle = "lightblue";
+      ctx.fill();
+
+      ctx.beginPath();
+      ctx.arc(540, 70, 50, 0, 2 * Math.PI);
+      ctx.fillStyle = "yellow";
+      ctx.fill();
+
+      ctx.beginPath();
+      ctx.rect(0, 470, 600, 600);
+      ctx.fillStyle = "blue";
+      ctx.fill();
+
+      ctx.beginPath();
+      ctx.rect(110, 430, 260 , 70);
+      ctx.fillStyle = "red";
+      ctx.fill();
+      
+      ctx.beginPath();
+      ctx.moveTo(235, 260);
+      ctx.lineTo(135, 410);
+      ctx.lineTo(335, 410);
+      ctx.lineTo(235, 260);
+      ctx.fillStyle = "white";
+      ctx.fill();
+
+      ctx.beginPath();
+      ctx.rect(230, 200, 15, 230);
+      ctx.fillStyle = "black";
+      ctx.fill();
+
+      ctx.beginPath();
+      ctx.moveTo(170, 225);
+      ctx.lineTo(220, 250);
+      ctx.lineTo(220, 200);
+      ctx.lineTo(170, 225);
+      ctx.fillStyle = "green";
+      ctx.fill();
+
+      
+    </script>
+</body>
+</html>

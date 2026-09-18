@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas
+      id="myCanvas"
+      width="600"
+      height="600"
+      style="border: 1px solid black"
+    ></canvas>
+
+    <script>
+      let c = document.getElementById("myCanvas");
+      let ctx = c.getContext("2d");
+
+      ctx.beginPath();
+      ctx.rect(0,0,600,600);
+      ctx.fillStyle = "rgb(214, 168, 141)";
+      ctx.fill();
+      
+      ctx.beginPath();
+      ctx.arc(300, 1050, 700, 0, 2* Math.PI);
+      ctx.fillStyle = "beige"
+      ctx.fill();
+
+      /* stupić */
+      ctx.beginPath();
+      ctx.rect(100, 350, 10, 80);
+      ctx.fillStyle = "brown";
+      ctx.fill();
+
+      /* drvo */
+      ctx.beginPath();
+      ctx.moveTo(110, 160);
+      ctx.lineTo(60, 400);
+      ctx.lineTo(160, 400);
+      ctx.lineTo(110, 160);
+      ctx.fillStyle = "darkgreen";
+      ctx.fill();
+
+      ctx.beginPath();
+      ctx.rect(230, 350, 5, 70);
+      ctx.fillStyle = "brown";
+      ctx.fill();
+
+      ctx.beginPath();
+      ctx.moveTo(240, 200);
+      ctx.lineTo(190, 400);
+      ctx.lineTo(290, 400);
+      ctx.lineTo(240, 200);
+      ctx.fillStyle = "darkgreen";
+      ctx.fill();
+
+      ctx.beginPath();
+      ctx.rect(420, 350, 5, 70);
+      ctx.fillStyle = "brown";
+      ctx.fill();
+
+      ctx.beginPath();
+      ctx.moveTo(420, 250);
+      ctx.lineTo(380, 400);
+      ctx.lineTo(470, 400);
+      ctx.lineTo(420, 250);
+      ctx.fillStyle = "darkgreen";
+      ctx.fill();
+      
+    </script>
+
+</body>
+</html>
