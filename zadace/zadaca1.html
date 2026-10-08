@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./styles.css">
+  <title>Skriptni jezici</title>
+</head>
+<body>
+ 
+
+  <ul class="ul">
+    <li class="li"><a  href="./home.html">Home</a></li>
+    <li class="li"><a href="./o_nama.html">O nama</a></li>
+    <li class="li"><a href="./kontakt.html">Kontakt</a></li>
+  </ul>
+  <h1>HTML, CSS, canvas i SVG</h1>
+  <p>Canvas je HTML5 element koji, pomoću JavaScript-a, omogućava dinamičko iscrtavanje
+različitih oblika, dodavanje slika, kreiranje animacija na web stranici i sl. <br> <br>
+Na platnu (canvas-u) to ne radimo korištenjem novog jezika (kao što je to slučaj kod SVG) ili
+korištenjem Flasha. Najčešće uporabe platna su: </p>
+<p>
+<ul class="paragraf">
+  <li>crtanje grafova</li>
+  <li>animiranje igre i</li>
+  <li>kompozicija slike</li>
+</ul>
+</p>
+
+<br> <hr>
+<p>
+<strong>SVG</strong> (Scalable Vector Graphics) grafika ne gubi kvalitetu prilikom zumiranja ili resize-a. <br> <br>
+Svi crteži mogu biti interaktivni i dinamički. Svaki element i atribut SVG datoteke može biti <br><br>
+animiran. Animacije mogu biti definirane i pokrenute interaktivno ili pomoću skripti.
+<br><br>
+SVG integrira druge W3C standarde kao što su DOM, XSL … </p> <br><br> <hr>
+<h3><strong>Usporedba SVG-a i Canvasa</strong></h3>
+<table>
+  <tr>
+  <th>SVG</th>
+  <th>HTML, Canvas</th>
+</tr>
+<tr>
+  <td>SVG ima bolju skalabilnost, tako da <br>može imati bolje slike sa velikom kva-<br>litetom na bilo kojoj rezoluciji</td>
+  <td>Canvas ima lošu skalabilnost. <br> Nije prikladan za rad s velikim <br> rezolucijama</td>
+</tr>
+<tr>
+  <td>SVG daje bolje performanse sa ma-<br>njim brojem objekata ili većom <br> površinom</td>
+  <td>Canvas daje bolje performanse <br> za rad sa manjim površinama <br> ili većim brojem objekata </td>
+</tr>
+<tr>
+  <td>SVG se može modificirati  uz pomoć <br> skripte i CSS-a</td>
+  <td>Canvas se može modificirati <br> samo uz pomoć skripte</td>
+</tr>
+<tr>
+  <td>SVG je baziran na vektorima i sastav-<br>ljen je od oblika</td>
+  <td>Canvas je baziran na pixelima</td>
+</tr>
+</table>
+<br>
+<table>
+  <tr>
+    <th>Ime</th>
+    <td>Marko</td>
+  </tr>
+  <tr>
+    <th>Telfon</th>
+      <td>555-1234</td>
+      <td>555-8745</td>
+  </tr>
+</table>
+<img src="/slika.png" alt="slika">
+</p>
+
+<h2>Primjer SVG-a i Canvasa</h2>
+ <canvas
+      id="myCanvas"
+      width="400"
+      height="400"
+      style="border: 1px solid black"
+    ></canvas>
+
+    <script>
+      let c = document.getElementById("myCanvas");
+      let ctx = c.getContext("2d");
+
+      ctx.beginPath();
+      ctx.rect(0,0,400,400);
+      ctx.fillStyle = "lightblue";
+      ctx.fill();
+
+      ctx.beginPath();
+      ctx.rect(80,80, 200, 200);
+      ctx.fillStyle = "beige";
+      ctx.fill();
+
+      ctx.beginPath();
+      ctx.rect(80, 65, 200, 30);
+      ctx.fillStyle = "blue";
+      ctx.fill();
+
+      ctx.beginPath();
+      ctx.rect(50, 150, 30, 50);
+      ctx.fillStyle = "yellow";
+      ctx.fill();
+
+      ctx.beginPath();
+      ctx.rect(280, 150, 30, 50);
+      ctx.fillStyle = "yellow";
+      ctx.fill();
+
+      ctx.beginPath();
+      ctx.arc(135, 155, 20, 0, 2 * Math.PI);
+      ctx.fillStyle = "white";
+      ctx.fill();
+
+      ctx.beginPath();
+      ctx.arc(135, 155, 14, 0, 2 * Math.PI);
+      ctx.fillStyle = "blue";
+      ctx.fill();
+
+      ctx.beginPath();
+      ctx.arc(225, 155, 20, 0, 2 * Math.PI);
+      ctx.fillStyle = "white";
+      ctx.fill();
+
+      ctx.beginPath();
+      ctx.arc(225, 155, 14, 0, 2 * Math.PI);
+      ctx.fillStyle = "blue";
+      ctx.fill();
+
+      ctx.beginPath();
+      ctx.moveTo(180, 170);
+      ctx.lineTo(160, 190);
+      ctx.lineTo(200, 190);
+      ctx.lineTo(180, 170);
+      ctx.fillStyle = "orange";
+      ctx.fill();
+
+      ctx.beginPath();
+      ctx.arc(180, 205, 64, 0, 1 * Math.PI);
+      ctx.fillStyle = "red";
+      ctx.fill();
+
+      
+
+      ctx.beginPath();
+      ctx.moveTo(140, 305);
+      ctx.lineTo(175, 325);
+      ctx.lineTo(140, 345);
+      ctx.lineTo(140, 305);
+      ctx.fillStyle = "blue";
+      ctx.fill();
+
+      ctx.beginPath();
+      ctx.moveTo(210, 305);
+      ctx.lineTo(175, 325);
+      ctx.lineTo(210, 345);
+      ctx.lineTo(210, 305);
+      ctx.fillStyle = "blue";
+      ctx.fill();
+
+      ctx.beginPath();
+      ctx.arc(175, 325, 14, 0, 2 * Math.PI);
+      ctx.fillStyle = "yellow";
+      ctx.fill();
+
+
+    </script>
+
+<footer>
+  <form action="#" method="get">
+    <label for="name">Unesi ime:</label>
+    <input type="text" id="name" placeholder="Unesi ime..." required> <br>
+    <label for="mail">Unesi mail:</label>
+    <input type="email" id="mail" placeholder="Unesite email..."> <br>
+    <label for="adresa">Unesite adresu</label>
+    <input type="text" id="adresa" placeholder="Unesi adresu:"> <br>
+    <label for="datum">Izaberite datum</label>
+    <input type="date" id="datum"> <br>
+    <input class="input" type="reset" value="Resetiraj"> <br>
+    <input class="input" type="submit" value="Pošalji">
+
+  </form>
+</footer>
+
+</body>
+</html>

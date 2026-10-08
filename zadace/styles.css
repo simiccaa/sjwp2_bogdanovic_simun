@@ -1,0 +1,39 @@
+table, tr, th, td{
+  border-collapse:collapse;
+  border: 1px solid black;
+  color: rgb(96 96 96);
+}
+.paragraf{
+  color: rgb(96 96 96);
+}
+body{
+  background-color: #C2F8F7;
+}
+h1{
+  font-size: 2.5em;
+  font-weight: bold;
+}
+p{
+  margin-left: 8px;
+  margin-right: 8px;
+  color: rgb(96 96 96);
+}
+
+img{
+  width: 480px;
+  height: 220px;
+}
+.ul{
+  list-style-type: none;
+  display: flex;
+}
+.li{
+  margin-left: 350px;
+}
+.input{
+  background-color: #C2F8F7;
+  border-radius: 4px;
+}
+form{
+  width: 100%;
+}
