@@ -30,10 +30,14 @@ img{
 .li{
   margin-left: 350px;
 }
-.input{
+input{
   background-color: #C2F8F7;
   border-radius: 4px;
+  width: 100%;
 }
 form{
+  width: 100%;
+}
+footer{
   width: 100%;
 }
