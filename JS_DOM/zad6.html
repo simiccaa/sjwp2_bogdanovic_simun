@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <p id="prvi">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+    Nihil culpa praesentium nesciunt voluptatum aliquam eius, 
+    id enim deleniti perspiciatis eligendi inventore at fuga 
+    labore consequatur quae perferendis dolorem consectetur hic!</p>
+  <p id="drugi">Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis molestias enim 
+    quod quidem accusamus veroconsectetur error est illum nostrum? Fugiat nulla 
+    praesentium pariatur molestiae asperiores illo, veniam ratione facere.</p>
+  <p id="treci">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odit qui 
+    dolorum quae ullam magni, commodi deserunt at, est nam adipisci explicabo 
+    doloribus quasi eius libero, pariatur nostrum eaque! Minus, fuga!</p>
+
+  <script>
+    const prvi = document.getElementById("prvi");
+    const drugi = document.getElementById("drugi");
+    const treci = document.getElementById("treci");
+
+    const tekst = document.querySelectorAll("p");
+    tekst.forEach(function(e1){
+      e1.style.color = "red";
+    });
+  </script>
+</body>
+</html>

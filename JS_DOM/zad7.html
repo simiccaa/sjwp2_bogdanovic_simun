@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <p>Upozorenje!</p>
+  <button>Upozorenje</button>
+  <script>
+    let btn = document.querySelector("button");
+    let tekst = document.querySelector("p");
+    btn.onclick = function(){
+      tekst.textContent = "Upozorenje 2!"
+      tekst.style.color= "red";
+      tekst.style.backgroundColor = "yellow";
+      
+    }
+  </script>
+</body>
+</html>

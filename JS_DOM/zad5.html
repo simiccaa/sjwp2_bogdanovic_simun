@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error quidem
+     debitis earum tempora natus, quia dolor, doloremque voluptatem iste, 
+     sunt optio excepturi neque omnis enim quas fugit totam quaerat. Dicta!</p>
+      <button id="button">Prikaži poruku</button>
+  <script>
+    let tekst = document.querySelector("p");
+    let btn = document.getElementById("button");
+    btn.onclick = function(){
+      tekst.textContent = "Uspješno ste kliknuli gumb!"
+    }
+  </script>
+</body>
+</html>

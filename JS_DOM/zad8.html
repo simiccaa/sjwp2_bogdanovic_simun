@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <p class="kartica">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo veniam modi perspiciatis sint facere aliquam iusto sapiente possimus optio, inventore repudiandae, ea eaque vero doloremque odit nemo quae! Consequatur, cupiditate.</p>
+  
+  <button>gumb</button>
+  <script>
+    const kartica = document.querySelector("p");
+    kartica.classList.add("kartica");
+    const btn = document.querySelector("button");
+    btn.onclick = function(){
+      kartica.classList.toggle("kartica");
+    }
+
+  </script>
+</body>
+</html>
