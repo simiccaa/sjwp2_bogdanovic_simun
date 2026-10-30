@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
+<style>
+  
+</style>
 <body>
   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
     Cum, dolorum alias. Incidunt fugit necessitatibus numquam 
@@ -16,9 +19,18 @@
       let tekst = document.querySelector("p");
       let btn = document.querySelector("button");
 
+      tekst.style.display = "inline";
+
       btn.onclick = function(){
-        tekst.style.display = "none";
+        if(tekst.style.display == "inline"){
+          tekst.style.display = "none";
+        }
+        else{
+          tekst.style.display = "inline";
+        }
+        
       }
+      
       
     </script>
 

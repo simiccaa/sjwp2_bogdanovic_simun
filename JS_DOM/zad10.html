@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   
+    <img src="./voce.jpg" alt="voce">
+    <button>Gumb</button>
+
+
+    <script>
+
+        let btn = document.querySelector("button");
+        let slika = document.querySelector("img");
+
+        btn.onclick = function(){
+            if(slika.alt === "voce"){
+                slika.alt = "slika";
+                slika.src = "/slika.png";
+            }
+            else{
+                slika.alt = "voce"
+                slika.src = "./voce.jpg";
+            }
+        }
+    </script>
+</body>
+</html>

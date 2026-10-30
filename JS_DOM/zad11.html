@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>Gumb</button>
+    <a href="https://www.index.hr/">index</a>
+
+    <script>
+        let txt = document.querySelector("a");
+        let btn = document.querySelector("button");
+
+        btn.onclick = function(){
+            if(txt.href === "https://www.index.hr/"){
+                txt.href = "https://www.jutarnji.hr/";
+                txt.textContent = "jutarnji";
+            }
+            else{
+                txt.href = "https://www.index.hr/";
+                txt.textContent = "index";
+            }
+        }
+    </script>
+
+</body>
+</html>

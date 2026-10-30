@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="yes">Omogući</button>
+    <button id="no">Onemogući</button>
+    <button id="gumb">Gumb</button>
+    <p>paragraf</p>
+
+    <script>
+        let btn1 = document.getElementById("yes");
+        let btn2 = document.getElementById("no");
+        let btn3 = document.getElementById("gumb").disabled = false;
+        let txt = document.querySelector("p");
+
+        btn1.onclick = function(){
+            btn3.disabled = false;
+            txt.style.color = "green";
+        }
+        btn2.onclick = function(){
+           btn3.disabled = true;
+            txt.style.color = "red";
+        }
+        
+        
+    </script>
+</body>
+</html>
