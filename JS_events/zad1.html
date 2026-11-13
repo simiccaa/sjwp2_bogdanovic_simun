@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="plus">+</button>
+    <button id="minus">-</button>
+    <button id="reset">reset</button>
+    <p id="p">Broj: 0</p>
+    <script>
+
+        let broj = 0;
+        const btn1 = document.getElementById("plus");
+        const btn2 = document.getElementById("minus");
+        const btn3 = document.getElementById("reset");
+        const ispis = document.getElementById("p");
+
+        btn1.addEventListener("click", function (){
+            broj++;
+            ispis.textContent = "Broj: " + broj;
+        });
+        btn2.addEventListener("click", function (){
+            broj--;
+            ispis.textContent = "Broj: " + broj;
+        });
+        btn3.addEventListener("click", function(){
+            broj = 0;
+            ispis.textContent ="Broj: " + broj;
+        })
+    </script>
+</body>
+</html>

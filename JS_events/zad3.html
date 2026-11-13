@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1></h1>
+    <input id="x" type="number">
+    <input id="y" type="number">
+
+    <div>
+        <input type="radio" id="zbr">
+        <label for="zbr">Zbrajanje</label>
+        <input type="radio" id="oduz">
+        <label for="oduz">Oduzimanje</label>
+        <input type="radio" id="pom">
+        <label for="pom">Množenje</label>
+        <input type="radio" id="dije">
+        <label for="dije">Dijeljenje</label>
+    </div>
+
+    <button id="btn1">Izračunaj</button>
+    
+
+
+    <script>
+        const x = document.getElementById("x");
+        const y = document.getElementById("y");
+        const ispis = document.querySelector("h1");
+
+        const btn1 = document.getElementById("btn1");
+
+        const zbr = document.getElementById("zbr");
+        const oduz = document.getElementById("oduz");
+        const dije = document.getElementById("dije");
+        const mnoz = document.getElementById("pom");
+        
+
+        function izvrsi(x,y,operacija){
+            return operacija(x, y);
+        }
+        function zbroji(x,y){
+            return x + y;
+        }
+        function oduzmi(x,y){
+            return x - y;
+        }
+        function pomnozi(x,y){
+            return x * y;
+        }
+        function podijeli(x,y){
+            return x / y;
+        }
+        btn1.addEventListener("click", function(){
+            if(zbr  ){
+                ispis.textContent ="Zbroj brojeva x i y je:" + izvrsi(x,y,zbroji);
+            } 
+        });
+       
+        
+    </script>
+</body>
+</html>
