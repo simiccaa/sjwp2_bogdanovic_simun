@@ -6,60 +6,89 @@
     <title>Document</title>
 </head>
 <body>
-    <h1></h1>
-    <input id="x" type="number">
-    <input id="y" type="number">
+    <h2>Kalkulator</h2>
 
-    <div>
-        <input type="radio" id="zbr">
-        <label for="zbr">Zbrajanje</label>
-        <input type="radio" id="oduz">
-        <label for="oduz">Oduzimanje</label>
-        <input type="radio" id="pom">
-        <label for="pom">Množenje</label>
-        <input type="radio" id="dije">
-        <label for="dije">Dijeljenje</label>
-    </div>
-
-    <button id="btn1">Izračunaj</button>
+    <input type="number" id="broj1" placeholder="Prvi broj">
     
+    <input type="number" id="broj2" placeholder="Drugi broj">
+
+    <select id="operacija">
+        <option value="zbroji">Zbrajanje</option>
+        <option value="oduzmi">Oduzimanje</option>
+        <option value="pomnozi">Množenje</option>
+        <option value="podijeli">Dijeljenje</option>
+    </select>
+
+    <button id="izracunaj">Izračunaj</button>
+
+    <p id="rezultat"></p>
 
 
     <script>
-        const x = document.getElementById("x");
-        const y = document.getElementById("y");
-        const ispis = document.querySelector("h1");
-
-        const btn1 = document.getElementById("btn1");
-
-        const zbr = document.getElementById("zbr");
-        const oduz = document.getElementById("oduz");
-        const dije = document.getElementById("dije");
-        const mnoz = document.getElementById("pom");
         
+// Funkcije za matematičke operacije
 
-        function izvrsi(x,y,operacija){
-            return operacija(x, y);
+function zbroji(a, b) {
+    return a + b;
+}
+
+function oduzmi(a, b) {
+    return a - b;
+}
+
+function pomnozi(a, b) {
+    return a * b;
+}
+
+function podijeli(a, b) {
+    if (b == 0) {
+        return "Nije moguće dijeliti s nulom!";
+    }
+    return a / b;
+}
+
+
+// Funkcija koja prima callback
+function izvrsi(a, b, operacija) {
+    return operacija(a, b);
+}
+
+
+// EventListener za gumb
+document.getElementById("izracunaj").addEventListener("click", function() {
+
+    let a = Number(document.getElementById("broj1").value);
+    let b = Number(document.getElementById("broj2").value);
+
+    let izbor = document.getElementById("operacija").value;
+
+    let rezultat;
+
+    if (document.getElementById("broj1").value == "" ||
+        document.getElementById("broj2").value == "") {
+
+        rezultat = "Unesite oba broja!";
+
+    } else {
+
+        if (izbor == "zbroji") {
+            rezultat = izvrsi(a, b, zbroji);
         }
-        function zbroji(x,y){
-            return x + y;
+        else if (izbor == "oduzmi") {
+            rezultat = izvrsi(a, b, oduzmi);
         }
-        function oduzmi(x,y){
-            return x - y;
+        else if (izbor == "pomnozi") {
+            rezultat = izvrsi(a, b, pomnozi);
         }
-        function pomnozi(x,y){
-            return x * y;
+        else if (izbor == "podijeli") {
+            rezultat = izvrsi(a, b, podijeli);
         }
-        function podijeli(x,y){
-            return x / y;
-        }
-        btn1.addEventListener("click", function(){
-            if(zbr  ){
-                ispis.textContent ="Zbroj brojeva x i y je:" + izvrsi(x,y,zbroji);
-            } 
-        });
-       
-        
+    }
+
+    document.getElementById("rezultat").innerHTML ="Rezultat odabrane operacije: " + rezultat;
+
+});
+
     </script>
 </body>
 </html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <h1>Popis proizvoda</h1>
+
+    <h2>Svi proizvodi</h2>
+    <p id="proizvodi"></p>
+
+    <h2>Proizvodi skuplji od 50 €</h2>
+    <p id="skupi"></p>
+
+    <h2>Nazivi proizvoda</h2>
+    <p id="nazivi"></p>
+
+    <h2>Filtriranje po kategoriji</h2>
+
+    <select id="kategorija">
+        <option value="Elektronika">Elektronika</option>
+        <option value="Odjeća">Odjeća</option>
+        <option value="Obuća">Obuća</option>
+        <option value="Dodaci">Dodaci</option>
+    </select>
+
+    <button id="filtriraj">Filtriraj</button>
+
+    <p id="rezultat"></p>
+    
+    <script>
+let proizvodi = [
+    {
+        naziv: "Mobitel",
+        cijena: 500,
+        kategorija: "Elektronika",
+        stanjeZalihe: 10
+    },
+    {
+        naziv: "Laptop",
+        cijena: 900,
+        kategorija: "Elektronika",
+        stanjeZalihe: 5
+    },
+    {
+        naziv: "Majica",
+        cijena: 20,
+        kategorija: "Odjeća",
+        stanjeZalihe: 15
+    },
+    {
+        naziv: "Tenisice",
+        cijena: 70,
+        kategorija: "Obuća",
+        stanjeZalihe: 8
+    },
+    {
+        naziv: "Slušalice",
+        cijena: 35,
+        kategorija: "Elektronika",
+        stanjeZalihe: 12
+    },
+    {
+        naziv: "Ruksak",
+        cijena: 45,
+        kategorija: "Dodaci",
+        stanjeZalihe: 6
+    }
+];
+
+
+let paragraf = document.getElementById("proizvodi");
+
+proizvodi.forEach(function(proizvod) {
+    paragraf.innerHTML +=
+        "Naziv: " + proizvod.naziv + "<br>" +
+        "Cijena: " + proizvod.cijena + " €<br>" +
+        "Kategorija: " + proizvod.kategorija + "<br>" +
+        "Stanje zalihe: " + proizvod.stanjeZalihe + "<br><br>";
+});
+
+
+
+
+let skupiProizvodi = proizvodi.filter(function(proizvod) {
+    return proizvod.cijena > 50;
+});
+
+let skupi = document.getElementById("skupi");
+
+skupiProizvodi.forEach(function(proizvod) {
+    skupi.innerHTML += proizvod.naziv + " - " + proizvod.cijena + " €<br>";
+});
+
+
+
+
+let nazivi = proizvodi.map(function(proizvod) {
+    return proizvod.naziv;
+});
+
+document.getElementById("nazivi").innerHTML = nazivi.join(", ");
+
+
+
+
+document.getElementById("filtriraj").addEventListener("click", function() {
+
+    let kategorija = document.getElementById("kategorija").value;
+
+    let filtrirani = proizvodi.filter(function(proizvod) {
+        return proizvod.kategorija == kategorija;
+    });
+
+    let rezultat = document.getElementById("rezultat");
+    rezultat.innerHTML = "";
+
+    filtrirani.forEach(function(proizvod) {
+        rezultat.innerHTML += proizvod.naziv + " - " + proizvod.cijena + " €<br>";
+    });
+
+});
+
+    </script>
+</body>
+</html>
